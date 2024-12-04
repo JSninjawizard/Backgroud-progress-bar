@@ -1,18 +1,8 @@
 const btn = document.querySelector('.btn')
-const boxes = document.querySelectorAll('.box')
+const labels = document.querySelectorAll('label')
+const inputs = document.querySelectorAll('input')
 
 
-let current = 1
-btn.addEventListener('click', (e) => {
-    console.log(e.target);
-    boxes.forEach((el, i, arr) => {
-        if (i < arr.length) {
-            if (i+1 === current) {
-                el.classList.add('pr')
-                console.log(el);
-                console.log(i);
-            }
-        }
-    })
-    current++
+btn.addEventListener('click', (e)=> {
+    inputs.forEach('')
 })

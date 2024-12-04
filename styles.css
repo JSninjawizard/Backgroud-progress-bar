@@ -6,39 +6,102 @@
     box-sizing: border-box;
 }
 
-.container {
-    width: 100vw;
+.main-container {
+    position: relative;
+}
+
+.bg-container {
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+
+}
+
+.bg-container > * {
+    height: 100%;
+    width: 100%;
 }
 
 .box {
-    background-color: rgba(194, 58, 58, 0.248);
-    border: 1px solid;
+
+}
+    .box-1 {background-color: rgba(255, 0, 0, 0.337);}
+    .box-2 {background-color: rgba(113, 8, 8, 0.474);}
+    .box-3 {background-color: rgba(98, 3, 3, 0.314);}
+
+.input-container {
+    border: 1px solid purple;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    width: 100vw;
+    justify-content: center;
+    align-items: center;
+
+}
+/*
+.input-container__username {
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
 }
 
-.btn {
-    position: absolute;
+.input-container__password {
+    display: none;
+}
+.input-container__email {
+    display: none;
+} */
+
+
+/* test zone */
+.input-container {
+    /* border: 2px solid; */
 }
 
 
-.box-1::before, 
-.box-2::before, 
-.box-3::before {
-    content: '';
-    position: absolute;
-    height: 100vh;
-    background-color: yellowgreen;
-    width: calc(100% /3);
-    transform: scaleX(0);
-    transition: all 0.5s ease;
-    transform-origin: left;
-  }
-  
-  .pr::before {
-    transform: scaleX(1);
-  }
+
+/* !Global Class?? */
+.input-container__username {}
+label {
+    font-family: "Montserrat", sans-serif;
+}
+input[type="text"] {
+    font-size: 1.1rem;
+}
+
+/* Parent */
+.form-container {
+    border: 5px solid;
+    position: relative;
+}
+
+/* Children */
+    .input-container__username {
+        /* position: absolute; */
+    }
+
+    .input-container__password {
+        position: absolute;
+        top: 0;
+        display: none;
+    }
+
+    .input-container__email {
+        position: absolute;
+        top: 0;
+        display: none;
+    }
+
+
+
+    .username-label {}
+    .password-label {}
+    .email-label {}
+
+    .input-username {}
+    .input-password  {}
+    .input-email {}
+
+

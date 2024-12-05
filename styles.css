@@ -67,14 +67,16 @@
 label {
     font-family: "Montserrat", sans-serif;
 }
-input[type="text"] {
-    font-size: 1.1rem;
+input {
+    font-size: 1.2rem;
 }
 
 /* Parent */
 .form-container {
-    border: 5px solid;
+    /* border: 5px solid; */
     position: relative;
+    /* width: 40%; */
+    /* height: 5rem; */
 }
 
 /* Children */
@@ -85,16 +87,18 @@ input[type="text"] {
     .input-container__password {
         position: absolute;
         top: 0;
-        display: none;
+        /* display: none; */
     }
 
     .input-container__email {
         position: absolute;
         top: 0;
-        display: none;
+        /* display: none; */
     }
 
-
+.visible {
+    visibility: hidden;
+}
 
     .username-label {}
     .password-label {}
@@ -103,5 +107,4 @@ input[type="text"] {
     .input-username {}
     .input-password  {}
     .input-email {}
-
 

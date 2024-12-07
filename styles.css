@@ -47,7 +47,7 @@
 
 
 
-  .form {
+  .forms {
       position: absolute;
       z-index: 3;
       font-family: montserrat;
@@ -55,21 +55,27 @@
       border: 3px solid;
     }
     
-    .form > * {
+    .forms > * {
         display: flex;
     flex-direction: column;
     font-size: 3rem;
     font-size: calc(2rem + 1.4vw)
 }
 
-.form__username {}
+.form__username {
+
+}
 
 .form__password {
-    display: none;
+    /* display: none; */
+    position: absolute;
+    top: 0;
 }
 
 .form__email {
-    display: none;
+    /* display: none; */
+    position: absolute;
+    top: 0;
 }
 
 .label-username {
@@ -100,4 +106,8 @@ input[type=email] {
 .form__btn {
     border: 2px solid red;
     /* height: 10vh; */
+}
+
+.v0 {
+    visibility: hidden;
 }

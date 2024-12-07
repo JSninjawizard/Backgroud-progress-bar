@@ -24,12 +24,30 @@
     width: 100%;
 }
 
-.box {
+.box {}
 
-}
-    .box-1 {background-color: rgba(255, 0, 0, 0.337);}
-    .box-2 {background-color: rgba(113, 8, 8, 0.474);}
-    .box-3 {background-color: rgba(98, 3, 3, 0.314);}
+.box-1 {background-color: rgba(255, 0, 0, 0.337);}
+.box-2 {background-color: rgba(113, 8, 8, 0.474);}
+.box-3 {background-color: rgba(98, 3, 3, 0.314);}
+
+.box-1::before, 
+.box-2::before, 
+.box-3::before {
+    content: '';
+    position: absolute;
+    height: 100vh;
+    background-color: yellowgreen;
+    width: calc(100% /3);
+    transform: scaleX(0);
+    transition: all 0.7s ease;
+    transform-origin: left;
+  }
+  
+  .pr::before {
+    transform: scaleX(1);
+  }
+
+  
 
 .input-container {
     border: 1px solid purple;

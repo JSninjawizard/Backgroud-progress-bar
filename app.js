@@ -78,3 +78,6 @@ const mirroredEle = document.createElement('div');
 mirroredEle.textContent = usr.value;
 mirroredEle.classList.add('container__mirror');
 containerEle.prepend(mirroredEle);
+
+https://codepen.io/stanko/pen/vYVyZzO?editors=1010
+https://muffinman.io/blog/custom-giraffe-caret/

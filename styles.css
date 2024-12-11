@@ -136,7 +136,7 @@ input::placeholder {
   color: red;
   opacity: 0.5;
   font-family: "Montserrat", sans-serif;
-  
+
 }
 
 .input-username {
@@ -144,7 +144,7 @@ input::placeholder {
     caret-shape: block;
     /* caret-shape: underscore; */
     caret-color: red;
-    
+
 }
 
 .container__mirror {
@@ -173,3 +173,21 @@ input::placeholder {
     }
 }
 
+
+
+
+.my-Input {
+  border-right: 1px solid transparent;
+  color: white; /*Means both the text and caret will be white*/
+  background-color: white;
+  text-shadow: 0 0 2px #888;
+}
+.my-Input:focus {
+  animation: PulseAttention 1.5s cubic-bezier(.215, .61, .355, 1) forwards infinite;
+}
+
+@keyframes PulseAttention {
+  50% {
+      border-color: red;
+  }
+}

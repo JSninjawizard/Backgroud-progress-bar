@@ -57,3 +57,24 @@ btn.addEventListener("click", (e) => {
     //     }
   });
 });
+
+
+
+const usr = document.querySelector('.usr')
+const containerEle = document.querySelector('.test')
+const cursorPos = usr.selectionStart
+const textBeforeCursor = usr.value.substring(0, cursorPos);
+const textAfterCursor = usr.value.substring(cursorPos);
+
+const pre = document.createTextNode(textBeforeCursor);
+const post = document.createTextNode(textAfterCursor);
+const caretEle = document.createElement('span');
+
+caretEle.classList.add('container__cursor');
+caretEle.innerHTML = '&nbsp;';
+
+
+const mirroredEle = document.createElement('div');
+mirroredEle.textContent = usr.value;
+mirroredEle.classList.add('container__mirror');
+containerEle.prepend(mirroredEle);

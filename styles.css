@@ -1,62 +1,63 @@
 *,
 *::before,
 *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .main-container {
-    position: relative;
+  position: relative;
 }
 
-.bg-container {
-    height: 100vh;
-    display: flex;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-
+.progress-container {
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
 }
 
-.bg-container > * {
-    height: 100%;
-    width: 100%;
+.progress-container > * {
+  height: 100%;
+  width: 100%;
 }
 
-.box {}
+.box-1 {
+  background-color: rgba(255, 0, 0, 0.337);
+}
+.box-2 {
+  background-color: rgba(113, 8, 8, 0.474);
+}
+.box-3 {
+  background-color: rgba(98, 3, 3, 0.314);
+}
 
-.box-1 {background-color: rgba(255, 0, 0, 0.337);}
-.box-2 {background-color: rgba(113, 8, 8, 0.474);}
-.box-3 {background-color: rgba(98, 3, 3, 0.314);}
-
-.box-1::before, 
-.box-2::before, 
+.box-1::before,
+.box-2::before,
 .box-3::before {
-    content: '';
-    position: absolute;
-    height: 100vh;
-    background-color: yellowgreen;
-    width: calc(100% /3);
-    transform: scaleX(0);
-    transition: all 0.7s ease;
-    transform-origin: left;
-  }
-  
-  .pr::before {
-    transform: scaleX(1);
-  }
+  content: "";
+  position: absolute;
+  height: 100vh;
+  background-color: yellowgreen;
+  width: calc(100% / 3);
+  transform: scaleX(0);
+  transition: all 0.7s ease;
+  transform-origin: left;
+}
 
-  
+.pr::before {
+  transform: scaleX(1);
+}
 
+/* @@ INPUT CONTAINER */
 .input-container {
-    border: 1px solid purple;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-
+  border: 1px solid purple;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 /*
 .input-container__username {
@@ -72,57 +73,103 @@
     display: none;
 } */
 
-
 /* test zone */
 .input-container {
-    /* border: 2px solid; */
+  /* border: 2px solid; */
 }
-
-
 
 /* !Global Class?? */
-.input-container__username {}
+.input-container__username {
+}
 label {
-    font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 input {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 /* Parent */
 .form-container {
-    /* border: 5px solid; */
-    position: relative;
-    /* width: 40%; */
-    /* height: 5rem; */
+  /* border: 5px solid; */
+  position: relative;
+  /* width: 40%; */
+  /* height: 5rem; */
 }
 
 /* Children */
-    .input-container__username {
-        /* position: absolute; */
-    }
-
-    .input-container__password {
-        position: absolute;
-        top: 0;
-        /* display: none; */
-    }
-
-    .input-container__email {
-        position: absolute;
-        top: 0;
-        /* display: none; */
-    }
-
-.visible {
-    visibility: hidden;
+.input-container__username {
+  /* position: absolute; */
 }
 
-    .username-label {}
-    .password-label {}
-    .email-label {}
+.input-container__password {
+  position: absolute;
+  top: 0;
+  /* display: none; */
+}
 
-    .input-username {}
-    .input-password  {}
-    .input-email {}
+.input-container__email {
+  position: absolute;
+  top: 0;
+  /* display: none; */
+}
+
+.visible {
+  visibility: hidden;
+}
+
+.username-label {
+}
+.password-label {
+}
+.email-label {
+}
+
+.input-username {
+}
+.input-password {
+}
+.input-email {
+}
+
+/* Placeholders */
+input::placeholder {
+  color: red;
+  opacity: 0.5;
+  font-family: "Montserrat", sans-serif;
+  
+}
+
+.input-username {
+    /* caret-shape: bar; */
+    caret-shape: block;
+    /* caret-shape: underscore; */
+    caret-color: red;
+    
+}
+
+.container__mirror {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    color: transparent;
+}
+
+.container__cursor {
+    animation: blink 1s infinite;
+    background-color: rgb(15 23 42);
+    position: absolute;
+    width: 4px;
+}
+
+@keyframes blink {
+    0%, 100% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: rgb(15 23 42);
+    }
+}
 

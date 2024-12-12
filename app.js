@@ -81,6 +81,7 @@ btn.addEventListener("click", (e) => {
 
 // https://codepen.io/stanko/pen/vYVyZzO?editors=1010
 // https://muffinman.io/blog/custom-giraffe-caret/
+// https://phuoc.ng/collection/mirror-a-text-area/create-your-own-custom-cursor-in-a-text-area/
 
 
 
@@ -89,5 +90,5 @@ const spans = document.querySelector('.my-Input')
 spans.addEventListener('keydown', (e) => {
   console.log(e.key);
   // spans.blur()
-  
+
 })

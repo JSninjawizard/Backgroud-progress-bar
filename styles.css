@@ -178,16 +178,27 @@ input::placeholder {
 
 .my-Input {
   border-right: 1px solid transparent;
-  color: white; /*Means both the text and caret will be white*/
+  color: rgb(218, 106, 106); /*Means both the text and caret will be white*/
   background-color: white;
   text-shadow: 0 0 2px #888;
+  caret-color: transparent;
 }
 .my-Input:focus {
   animation: PulseAttention 1.5s cubic-bezier(.215, .61, .355, 1) forwards infinite;
+  border: none;
+  outline: none;
+}
+
+.my-Input::after {
+    content: "x";
+    animation: PulseAttention 1.5s cubic-bezier(.215, .61, .355, 1) forwards infinite;
+
 }
 
 @keyframes PulseAttention {
   50% {
-      border-color: red;
+      border-color: blue;
+      opacity: 0;
   }
 }
+

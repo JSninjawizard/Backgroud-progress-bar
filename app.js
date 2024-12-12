@@ -60,24 +60,34 @@ btn.addEventListener("click", (e) => {
 
 
 
-const usr = document.querySelector('.usr')
-const containerEle = document.querySelector('.test')
-const cursorPos = usr.selectionStart
-const textBeforeCursor = usr.value.substring(0, cursorPos);
-const textAfterCursor = usr.value.substring(cursorPos);
+// const usr = document.querySelector('.usr')
+// const containerEle = document.querySelector('.test')
+// const cursorPos = usr.selectionStart
+// const textBeforeCursor = usr.value.substring(0, cursorPos);
+// const textAfterCursor = usr.value.substring(cursorPos);
 
-const pre = document.createTextNode(textBeforeCursor);
-const post = document.createTextNode(textAfterCursor);
-const caretEle = document.createElement('span');
+// const pre = document.createTextNode(textBeforeCursor);
+// const post = document.createTextNode(textAfterCursor);
+// const caretEle = document.createElement('span');
 
-caretEle.classList.add('container__cursor');
-caretEle.innerHTML = '&nbsp;';
+// caretEle.classList.add('container__cursor');
+// caretEle.innerHTML = '&nbsp;';
 
 
-const mirroredEle = document.createElement('div');
-mirroredEle.textContent = usr.value;
-mirroredEle.classList.add('container__mirror');
-containerEle.prepend(mirroredEle);
+// const mirroredEle = document.createElement('div');
+// mirroredEle.textContent = usr.value;
+// mirroredEle.classList.add('container__mirror');
+// containerEle.prepend(mirroredEle);
 
-https://codepen.io/stanko/pen/vYVyZzO?editors=1010
-https://muffinman.io/blog/custom-giraffe-caret/
+// https://codepen.io/stanko/pen/vYVyZzO?editors=1010
+// https://muffinman.io/blog/custom-giraffe-caret/
+
+
+
+const spans = document.querySelector('.my-Input')
+
+spans.addEventListener('keydown', (e) => {
+  console.log(e.key);
+  // spans.blur()
+  
+})

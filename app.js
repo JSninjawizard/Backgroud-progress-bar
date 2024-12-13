@@ -85,10 +85,75 @@ btn.addEventListener("click", (e) => {
 
 
 
-const spans = document.querySelector('.my-Input')
+// Input
+const measureWidth = (text, font) => {
+  const canvasEle = document.createElement('canvas')
+  const context = canvasEle.getContext('2d')
+  context.font = font;
+  const metrics = context.measureText(text)
+  return metrics.width
+}
 
-spans.addEventListener('keydown', (e) => {
-  console.log(e.key);
-  // spans.blur()
 
+
+const inputStyles = window.getComputedStyle(inputs[0])
+console.log(inputStyles);
+const font = `${inputStyles.getPropertyValue('font-size')} ${inputStyles.getPropertyValue('font-family')}`
+// console.log(font);
+
+const inputEle = inputs[0]
+const caretEle = document.querySelector('.input-caret');
+
+const updateCaretPosition = () => {
+  const text = inputEle.value;
+  const inputStyles = window.getComputedStyle(inputEle);
+  const font = `${inputStyles.getPropertyValue('font-size')} ${inputStyles.getPropertyValue('font-family')}`;
+
+  const paddingLeft = parseInt(inputStyles.getPropertyValue('padding-left')) +3;
+
+  const caretWidth = caretEle.getBoundingClientRect().width;
+
+
+  const textWidth = measureWidth(text, font) + paddingLeft;
+  // console.log(textWidth);
+  const inputWidth = inputEle.getBoundingClientRect().width;
+
+
+  if (textWidth + caretWidth < inputWidth) {
+    caretEle.style.transform = `translate(${textWidth}px)`;
+  }
+};
+
+inputEle.addEventListener('input', updateCaretPosition);
+
+
+
+
+
+inputEle.addEventListener('keydown', (e) => {
+  const key = e.key
+  // console.log(key);
+  const text = inputEle.value;
+  const inputStyles = window.getComputedStyle(inputEle);
+  const font = `${inputStyles.getPropertyValue('font-size')} ${inputStyles.getPropertyValue('font-family')}`;
+  const fontProper = `${inputStyles.getPropertyValue('font-size')}`
+
+  const paddingLeft = parseInt(inputStyles.getPropertyValue('padding-left')) +3;
+
+  const caretWidth = caretEle.getBoundingClientRect().width;
+  const inputWidth = inputEle.getBoundingClientRect().width;
+  const textWidth = measureWidth(text, font) + paddingLeft;
+  // console.log(textWidth);
+  // const caretCurrentPos =
+
+  if (key === 'ArrowLeft' && textWidth + caretWidth < inputWidth) {
+
+    const fontP = parseInt(fontProper)
+    const test = textWidth - fontP
+    console.log(textWidth);
+    console.log(test);
+    // caretEle.style.transform = `translate(${parseInt(fontProper)}px)`;
+    caretEle.style.transform = `translate(${fontP}px)`;
+
+  }
 })

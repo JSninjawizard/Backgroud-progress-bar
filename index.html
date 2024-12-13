@@ -73,7 +73,6 @@
 </head>
 
 <body>
-  <span class="my-Input" contenteditable="true"></span>
 
     <main class="main-container">
         <div class="progress-container">
@@ -85,18 +84,22 @@
         <div class="input-container">
             <div class="form-container">
                 <div class="form input-container__username active">
-                    <label for="username" class="username-label">Username</label>
-                    <div class="test"><input type="text" id="username" class="input-username usr" placeholder="Username"></div>
+                    <!-- <label for="username" class="username-label">Username</label> -->
+                    <input type="text"
+                    id="username"
+                    class="input-username"
+                    placeholder="Username">
+                    <div class="input-caret"></div>
                 </div>
-                <div class="form input-container__password visible">
+                <!-- <div class="form input-container__password visible">
                     <label for="password" class="password-label">Password</label>
-                    <!-- <i class="fa-thin fa-eye"></i> -->
+                    <i class="fa-thin fa-eye"></i>
                     <input type="password" id="password" class="input-password">
-                </div>
-                <div class="form input-container__email visible">
+                </div> -->
+                <!-- <div class="form input-container__email visible">
                     <label for="email" class="email-label">Email</label>
                     <input type="email" id="email" class="input-email">
-                </div>
+                </div> -->
             </div>
             <button class="btn">Next</button>
         </div>

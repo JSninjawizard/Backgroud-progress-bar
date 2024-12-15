@@ -94,26 +94,31 @@ const measureWidth = (text, font) => {
   return metrics.width
 }
 
+// 
+inputs.forEach((el)=> {
+  const inpStyles = window.getComputedStyle(el)
+  console.log(inpStyles);
+  const font = `${inpStyles.getPropertyValue('font-size')} ${inpStyles.getPropertyValue('font-family')}`
+  console.log(font);
+})
+// 
 
 
 const inputStyles = window.getComputedStyle(inputs[0])
-console.log(inputStyles);
 const font = `${inputStyles.getPropertyValue('font-size')} ${inputStyles.getPropertyValue('font-family')}`
 // console.log(font);
 
 const inputEle = inputs[0]
 const caretEle = document.querySelector('.input-caret');
 
-const updateCaretPosition = () => {
-  const text = inputEle.value;
+const updateCaretPosition = (position) => {
+  // const text = inputEle.value;
+  const text = inputEle.value.substr(0, position);
+
   const inputStyles = window.getComputedStyle(inputEle);
   const font = `${inputStyles.getPropertyValue('font-size')} ${inputStyles.getPropertyValue('font-family')}`;
-
   const paddingLeft = parseInt(inputStyles.getPropertyValue('padding-left')) +3;
-
   const caretWidth = caretEle.getBoundingClientRect().width;
-
-
   const textWidth = measureWidth(text, font) + paddingLeft;
   // console.log(textWidth);
   const inputWidth = inputEle.getBoundingClientRect().width;
@@ -121,39 +126,26 @@ const updateCaretPosition = () => {
 
   if (textWidth + caretWidth < inputWidth) {
     caretEle.style.transform = `translate(${textWidth}px)`;
+    caretEle.style.transition = "all 0.1s ease-in";
   }
 };
 
-inputEle.addEventListener('input', updateCaretPosition);
-
-
-
-
-
-inputEle.addEventListener('keydown', (e) => {
-  const key = e.key
-  // console.log(key);
-  const text = inputEle.value;
-  const inputStyles = window.getComputedStyle(inputEle);
-  const font = `${inputStyles.getPropertyValue('font-size')} ${inputStyles.getPropertyValue('font-family')}`;
-  const fontProper = `${inputStyles.getPropertyValue('font-size')}`
-
-  const paddingLeft = parseInt(inputStyles.getPropertyValue('padding-left')) +3;
-
-  const caretWidth = caretEle.getBoundingClientRect().width;
-  const inputWidth = inputEle.getBoundingClientRect().width;
-  const textWidth = measureWidth(text, font) + paddingLeft;
-  // console.log(textWidth);
-  // const caretCurrentPos =
-
-  if (key === 'ArrowLeft' && textWidth + caretWidth < inputWidth) {
-
-    const fontP = parseInt(fontProper)
-    const test = textWidth - fontP
-    console.log(textWidth);
-    console.log(test);
-    // caretEle.style.transform = `translate(${parseInt(fontProper)}px)`;
-    caretEle.style.transform = `translate(${fontP}px)`;
-
+const handleSelectionChange = (e) => {
+  if (document.activeElement === inputEle) {
+      updateCaretPosition(inputEle.selectionStart);
   }
-})
+};
+document.addEventListener('selectionchange', handleSelectionChange);
+// inputEle.addEventListener('input', updateCaretPosition);
+
+const handleKeyDown = (e) => {
+  if (e.key === 'Backspace') {
+      updateCaretPosition(inputEle.value.length - 1);
+  }
+};
+
+inputEle.addEventListener('keydown', handleKeyDown);
+document.addEventListener('selectionchange', handleSelectionChange);
+
+
+

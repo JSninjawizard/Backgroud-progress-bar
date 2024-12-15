@@ -86,6 +86,7 @@ label {
 }
 input {
   font-size: 1.2rem;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Parent */
@@ -132,21 +133,24 @@ input {
 }
 
 /* Placeholders */
+.input-username {
+  /* caret-shape: bar; */
+  font-family: "Montserrat", sans-serif;
+  caret-color: transparent;
+}
+.input-username:focus {
+  outline: none;
+}
+
 input::placeholder {
   color: red;
   opacity: 0.5;
   font-family: "Montserrat", sans-serif;
-
+  padding-left: 3px;
 }
 
-.input-username {
-  /* caret-shape: bar; */
-  font-family: "Montserrat", sans-serif;
-    caret-shape: block;
-    /* caret-shape: underscore; */
-    caret-color: red;
-    caret-color: transparent;
-
+.input-username:focus::placeholder {
+  color: green;
 }
 
 .input-container__username {
@@ -154,43 +158,28 @@ input::placeholder {
 }
 
 .input-caret {
-  border: 1px solid black;
+  border: .5px solid black;
   position: absolute;
   top: 0;
-  width: 4px;
+  width: 3px;
   height: 100%;
   opacity: 0;
+  background-color: red;;
+  
 }
 
 .input-username:focus ~ .input-caret {
   opacity: 1;
-}
-
-
-
-
-
-
-
-
-
-
-/* .container__cursor {
-    animation: blink 1s infinite;
-    background-color: rgb(15 23 42);
-    position: absolute;
-    width: 4px;
+  animation: blink 1s infinite;
 }
 
 @keyframes blink {
-    0%, 100% {
-        background-color: transparent;
-    }
-    50% {
-        background-color: rgb(15 23 42);
-    }
-} */
-
-
-
-
+  0%,
+  100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgb(15 23 42);
+    background-color: rgb(51, 187, 43);
+  }
+}

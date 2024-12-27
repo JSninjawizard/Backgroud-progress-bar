@@ -30,8 +30,8 @@
 .box-2 {background-color: rgba(113, 8, 8, 0.474);}
 .box-3 {background-color: rgba(98, 3, 3, 0.314);}
 
-.box-1::before, 
-.box-2::before, 
+.box-1::before,
+.box-2::before,
 .box-3::before {
     content: '';
     position: absolute;
@@ -42,12 +42,12 @@
     transition: all 0.7s ease;
     transform-origin: left;
   }
-  
+
   .pr::before {
     transform: scaleX(1);
   }
 
-  
+
 
 .input-container {
     border: 1px solid purple;
@@ -87,6 +87,12 @@ label {
 }
 input {
     font-size: 1.2rem;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+}
+input:focus {
+    border: none;
+    outline: none;
 }
 
 /* Parent */

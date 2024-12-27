@@ -57,3 +57,15 @@ btn.addEventListener("click", (e) => {
     //     }
   });
 });
+
+
+inputs.forEach((inp, i) => {
+  if (i === 0) {
+    inp.addEventListener('input', (e) => {
+      const val = e.target.value
+
+      
+    })
+
+  }
+})

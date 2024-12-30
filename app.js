@@ -94,19 +94,10 @@ const measureWidth = (text, font) => {
   return metrics.width
 }
 
-// 
-inputs.forEach((el)=> {
-  const inpStyles = window.getComputedStyle(el)
-  console.log(inpStyles);
-  const font = `${inpStyles.getPropertyValue('font-size')} ${inpStyles.getPropertyValue('font-family')}`
-  console.log(font);
-})
-// 
 
 
 const inputStyles = window.getComputedStyle(inputs[0])
 const font = `${inputStyles.getPropertyValue('font-size')} ${inputStyles.getPropertyValue('font-family')}`
-// console.log(font);
 
 const inputEle = inputs[0]
 const caretEle = document.querySelector('.input-caret');
@@ -135,7 +126,7 @@ const handleSelectionChange = (e) => {
       updateCaretPosition(inputEle.selectionStart);
   }
 };
-document.addEventListener('selectionchange', handleSelectionChange);
+// document.addEventListener('selectionchange', handleSelectionChange);
 // inputEle.addEventListener('input', updateCaretPosition);
 
 const handleKeyDown = (e) => {
@@ -149,3 +140,15 @@ document.addEventListener('selectionchange', handleSelectionChange);
 
 
 
+// 
+inputs.forEach((el)=> {
+  const inpStyles = window.getComputedStyle(el)
+
+  const font = `${inpStyles.getPropertyValue('font-size')} ${inpStyles.getPropertyValue('font-family')}`
+  console.log(font);
+
+  inputEle.addEventListener('keydown', handleKeyDown);
+document.addEventListener('selectionchange', handleSelectionChange);
+
+})
+// 
